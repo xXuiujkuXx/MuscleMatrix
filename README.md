@@ -1,6 +1,7 @@
 # MuscleMatrix
 Physical Computing Project 2025 - IT KMITL
-Using Gyroscope or IMU sensor (e.g., MPU6050) to measures angular velocity which will determine the amount of rep you get from something like dumbell curl, barbell lift and analysis a data in WebApp.
+## Overview
+การใช้เซนเซอร์ไจโรสโคปหรือ IMU (เช่น MPU6050) เพื่อวัดความเร็วเชิงมุม (Angular Velocity) ซึ่งสามารถนำมาใช้ในการนับจำนวนครั้งที่ออกกำลังกาย เช่น การยกดัมเบล (Dumbbell Curl) หรือการยกบาร์เบล (Barbell Lift) และทำการวิเคราะห์ข้อมูลที่ได้ผ่านเว็บแอปพลิเคชัน
 ## Member (สมาชิก)
 | ID       | Name (ชื่อ)                     |
 |----------|---------------------------------|
