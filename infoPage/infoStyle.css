@@ -365,8 +365,123 @@
   transform: translateY(0);
 }
 
-/* Hover instantly, no delay */
 .reveal.active:hover,
 .reveal.active.hover-transition {
   transition-delay: 0s !important;
+}
+
+
+.debunk img {
+  width: 100%;
+  filter: grayscale(100%);
+}
+
+.debunk::after {
+  content: "DEBUNKED";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: rgb(71, 71, 71);
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.togo {
+  position: relative;
+  padding: 4em 2em;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: #a3d8ff;
+}
+
+.togo::before {
+  content: "WHAT?";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6em;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.togo h2 {
+  position: relative;
+  color: #555555;
+  z-index: 1;
+}
+
+.link_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  margin-top: 2em;
+  z-index: 1;
+}
+
+.link_container_bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  z-index: 1;
+}
+
+.link_left,
+.link_right {
+  display: flex;
+  align-items: center;
+  font-size: 3em;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.link_poster {
+  display: flex;
+  align-items: center;
+  font-size: 3em;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.link_left i {
+  color: red;
+  font-size: 2em;
+  margin-right: 30px;
+}
+
+.link_right i {
+  color: black;
+  font-size: 2em;
+  margin-right: 30px;
+}
+
+.link_poster i {
+  color: white;
+  font-size: 1.5em;
+  margin-right: 30px;
+}
+
+.link_left:hover,
+.link_right:hover,
+.link_poster:hover {
+  transform: scale(1.05);
+  color: #222;
+}
+
+.divider {
+  width: 2px;
+  height: 40px;
+  background-color: white;
 }
