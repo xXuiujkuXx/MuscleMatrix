@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background: #f9f9f9;
+    overflow-x: hidden;
+    margin: 0;
+    width: 100%; 
+    /* padding-top: 5em; */
+    font-family: 'Kanit', sans-serif;
+  }
+
+
+.banner {
+  height: 50vh;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.textbanner {
+  color: white;
+  position: absolute;
+  transform: translate(6em, -3em);
+  font-family: 'Kanit', sans-serif;
+}
+
+#abtustitle {
+  font-size: 3em;
+}
+
+#btn
+{
+    position: absolute;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #2d292a;
+    font-size: 1.5em;
+    border: none;
+    border-color: #f9f9f9;
+    transform: translate(0px, 20px);
+    transition: padding 0.2s,
+    color 0.2s,
+    transform 0.2s;
+    
+}
+
+
+#btn:hover {
+   
+    padding: 8px 60px;
+    transform: translate(0px, 20px);
+    color: #858283;
+}
+
+#picamd {
+  object-fit: cover;
+  height: 50vh;
+  width: 100vw;
+  pointer-events: none;
+}
+
+#abtusinfo {
+  font-family: 'Kanit', sans-serif;
+}
+
+.heading {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.heading h1 {
+  font-size: 50px;
+  color: #000;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.heading h1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  display: block;
+  margin: 0 auto;
+  background-color: #2d292a;
+}
+
+.heading p {
+  font-size: 18px;
+  color:#666;
+  margin-bottom: 33px;
+  font-family: 'Kanit', sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  margin-bottom: 5em;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 1;
+  margin-right: 40px;
+  overflow: hidden;
+}
+
+.about-image img {
+  height: auto;
+  display: block;
+  transition: 0.5s ease;
+
+}
+
+.about-image:hover img{
+  transform: scale(1.2);
+}
+.about-content {
+  flex: 1;
+  
+}
+
+.about-content h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #333;
+  font-family: 'Kanit', sans-serif;
+}
+
+.about-content p {
+  font-size: 1.5em;
+  margin-bottom: 1.5px;
+  color: #666;
+  font-family: 'Kanit', sans-serif;
+
+}
+
+@media screen and (max-width: 900px) {
+  .heading {
+    padding: 0px 20px;
+  }
+  .heading h1 {
+    font-size: 36px;
+  }
+  .heading p {
+    font-size: 17px;
+    margin-bottom: 0px;
+  }
+  .container {
+    padding: 0px;
+  }
+  .about {
+    padding: 20px;
+    flex-direction: column;
+  }
+  .about-image {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .about-content p {
+    padding: 0px;
+    font-size: 16px;
+  }
+
+}
+
+.members {
+  position: relative;
+  padding: 4em 2em;
+  text-align: center;
+  background: linear-gradient(135deg, #7fd6d9, #c2b0df);
+  font-family: "Poppins", sans-serif;
+}
+.members p,
+.members h4 {
+  font-family: 'Kanit', sans-serif;
+}
+
+.brief {
+  text-align: center;
+  background-color: #fff;
+}
+.brief p{
+  font-size: 1.3em;
+   padding: 0 50px;
+}
+
+.brief h1 {
+  font-size: 4.5em;
+  background-image: linear-gradient(to right, #7fd9a1,#7fd6d9, #c2b0df);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  padding-top: 50px;
+  -webkit-background-clip: text;
+  animation: lgbt 3s linear infinite;
+}
+
+@keyframes lgbt {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.hardware {
+  position: relative;
+  padding: 4em 2em;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;   
+
+}
+
+.members::before {
+  content: "DAMN";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6em;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  z-index: 0;
+}
+.hardware::before {
+  content: "TS AIN'T CHEAP";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6em;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+  z-index: 0;
+}
+.members_header {
+  position: relative;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 1em;
+  color: #111;
+  z-index: 1; 
+}
+
+
+.members_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2em;
+  justify-items: center;
+  margin-top: 3em;
+}
+
+.members_card, 
+.hardware_card {
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.members_card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.members_card:hover,
+.hardware_card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.reveal.active:hover {
+  transform: translateY(-10px);
+}
+
+.members_card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-bottom: 4px solid rgba(43, 255, 255, 0.8);
+}
+
+.hardware_card img {
+  width: 100%;
+  height: 260px;
+    object-fit: contain;
+  border-bottom: 4px solid rgba(255, 251, 20, 0.979);
+}
+
+.members_card h4,
+.hardware_card h4 {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0.6em 0 0.2em 0;
+  color: #111;
+}
+
+.members_card p,
+.hardware_card p {
+  font-size: 0.95em;
+  color: #777;
+  margin-bottom: 1.5em;
+}
+
+
+.members h2 {
+  color: #fff;
+}
+
+.hardware h2 {
+  color: #3b3b3b;
+}
+
+.hardware .members_grid .reveal.active:nth-of-type(1) { 
+  transition-delay: 0.1s; 
+}
+.hardware .members_grid .reveal.active:nth-of-type(2) { 
+  transition-delay: 0.3s; 
+}
+.hardware .members_grid .reveal.active:nth-of-type(3) { 
+  transition-delay: 0.5s; 
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover instantly, no delay */
+.reveal.active:hover,
+.reveal.active.hover-transition {
+  transition-delay: 0s !important;
+}
