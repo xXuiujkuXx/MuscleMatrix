@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuscleMatrix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay loop muted playsinline class="bg-video">
+        <source src="gym.mp4" type="video/mp4">
+    </video>
+    <div class="nav-bar">
+        <span class="nav-toggle " id="js-nav-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <div class="nav-logo">
+            <a href="index.html" class="a">MuscleMatrix</a>
+        </div>
+
+      
+        <div class="menu">
+            <ul id="js-menu">
+                <li><a class="menu-i" href="index.html" target="_self">Home</a></li>
+                <li><a class="menu-i" href="cer.html" target="_self">Infomation</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+    <div class="bodyy">
+        
+        <div class="box dumbell" onclick="window.location.href='dumbell.html'">
+        <div class="image-layer"></div>
+            <span>Dumbbell</span>
+        </div>
+
+        <div class="box barbell" onclick="window.location.href='barbell.html'">
+            <div class="image-layer"></div>
+            <span>Barbell</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-text">
+            <h1 class="footer-text-t">COPYRIGHT © MuscleMatrix 2025</h1>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+
+    <script src="js.js"></script>
+</body>
+</html>

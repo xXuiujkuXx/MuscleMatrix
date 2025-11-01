@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LED Monitor UI</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #f5fcfb, #faffd1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px;
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: url("teto1.webp") center/contain no-repeat;
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.3);
+    transition: transform 1.2s ease, opacity 0.8s ease, background 0.8s ease;
+    z-index: 0;
+  }
+
+  .overlay.slide {
+    transform: translate(-50%, -50%) scale(0.3) translateX(120%);
+    opacity: 0;
+  }
+
+  /* Layout: timer bar + content side by side */
+  .main-layout {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  /* Timer bar */
+  .timer-container {
+    width: 20px;
+    height: 400px;
+    border-radius: 20px;
+    background: #d1d1d1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .timer-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #39ad7d;
+    border-radius: 20px;
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+
+  /* Text section (LED1 + LED2) */
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;  /* ✅ Left-aligned text */
+  }
+
+  .led-group {
+    text-align: left;
+  }
+
+  .led {
+    font-size: 4em;
+    font-weight: bold;
+    color: #39ad7d;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .label {
+    font-size: 1.3em;
+    opacity: 0.8;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    color: #a3a3a3;
+    font-weight: bold;
+    margin-top: 2px;
+  }
+
+</style>
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main-layout">
+    <div class="timer-container">
+      <div class="timer-fill" id="timer"></div>
+    </div>
+
+    <div class="content">
+      <div class="led-group">
+        <div id="led1" class="led">0</div>
+        <div class="label">reps</div>
+      </div>
+
+      <!-- <div class="led-group">
+        <div id="led2" class="led">0</div>
+        <div class="label">LED2</div>
+      </div> -->
+    </div>
+  </div>
+
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+<script>
+// ---------------- MQTT Setup ----------------
+const broker = "wss://mqtt-dashboard.com:8884/mqtt"; // WebSocket
+const topic = "testtopic/Peemza";
+
+const client = mqtt.connect(broker);
+
+client.on("connect", () => {
+  console.log("✅ Connected to MQTT broker");
+  client.subscribe(topic, (err) => {
+    if (!err) console.log(`📡 Subscribed to topic: ${topic}`);
+  });
+});
+
+client.on("error", (err) => {
+  console.error("❌ MQTT Error:", err);
+});
+
+// LED color and size logic (reuseฟังก์ชันเดิม)
+function getStyle(value) {
+  let color, scale, range;
+  if (value <= 15) { color = "#0072ff"; scale = 1.0; range = 0; }
+  else if (value <= 30) { color = "#00c64a"; scale = 1.33; range = 1; }
+  else if (value <= 45) { color = "#f0c000"; scale = 1.66; range = 2; }
+  else { color = "#dd2476"; scale = 2.0; range = 3; }
+  return { color, scale, range };
+}
+
+// รับค่า MQTT และอัปเดต LED1
+let lastRange = -1;
+let overlay = document.getElementById("overlay");
+let backgrounds = ["caseoh.jpg", "caseoh2.jpg", "caseoh3.jpg", "caseoh4.jpg"];
+let currentBgIndex = 0;
+
+client.on("message", (topic, message) => {
+  try {
+    const data = JSON.parse(message.toString());
+    const count = data.count; // ค่า count จาก Arduino
+    const led1 = document.getElementById("led1");
+
+    let s1 = getStyle(count);
+    led1.textContent = count;
+    led1.style.color = s1.color;
+    led1.style.transform = `scale(${s1.scale})`;
+
+    // เปลี่ยน overlay เมื่อ range ของ LED1 เปลี่ยน
+    if (s1.range !== lastRange) {
+      lastRange = s1.range;
+      currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
+      overlay.classList.add("slide");
+      setTimeout(() => {
+        overlay.style.background = `url(${backgrounds[currentBgIndex]}) center/contain no-repeat`;
+        overlay.classList.remove("slide");
+      }, 600);
+    }
+  } catch (err) {
+    console.error("Invalid JSON:", message.toString());
+  }
+});
+</script>
+
+</body>
+</html>
