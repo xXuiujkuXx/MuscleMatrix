@@ -9,3 +9,5 @@ Physical Computing Project 2025 - IT KMITL
 | 67070043 | ฐิติภัทร ไร่พันพ่าย  |
 | 67070046  | ณทชัย ฆ้องนอก |
 | 67070211  | จิรสิน พานิชชาติ  |
+
+https://xxuiujkuxx.github.io/MuscleMatrix/infoPage/infoIndex.html
