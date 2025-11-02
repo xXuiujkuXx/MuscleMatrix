@@ -13,7 +13,7 @@ Physical Computing Project 2025 - IT KMITL
 [👉 Open Info Page](https://xxuiujkuxx.github.io/MuscleMatrix/infoPage/infoIndex.html)
 ## Home page (actual software)
 [👉 Open Home page](https://xxuiujkuxx.github.io/MuscleMatrix/infoPage/infoIndex.html)
-## Presentation Video(actual software)
+## Presentation Video
 [👉 Youtube](https://youtu.be/LJDeZDLrBZw)
 ## Poster
 ![Info Page Preview](infoPage/img/poster.png)
