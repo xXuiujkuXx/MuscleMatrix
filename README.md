@@ -11,6 +11,7 @@ Physical Computing Project 2025 - IT KMITL
 | 67070211  | จิรสิน พานิชชาติ  |
 ## Info Page
 [👉 Open Info Page](https://xxuiujkuxx.github.io/MuscleMatrix/infoPage/infoIndex.html)
+!!! NOT RESPONSIVE ON MOBILE DEVICE
 ## Home page (actual software)
 [👉 Open Home page](https://xxuiujkuxx.github.io/MuscleMatrix/index.html)
 ## Presentation Video
