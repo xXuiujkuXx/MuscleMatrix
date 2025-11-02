@@ -17,4 +17,7 @@ Physical Computing Project 2025 - IT KMITL
 [👉 Youtube](https://youtu.be/LJDeZDLrBZw)
 ## Poster
 ![Info Page Preview](infoPage/img/poster.png)
-
+## Reference
+![Convert raw data from MPU6050](https://samselectronicsprojects.blogspot.com/2014/07/getting-roll-pitch-and-yaw-from-mpu-6050.html)
+![UI/UX](https://www.youtube.com/watch?v=A-EWDi1M_1E&list=PLTGJJtjJqB_C2If2qb1Swdgeb-wqwznOr&index=139)
+![Project Reference](https://www.instructables.com/Using-an-Arduino-Neural-Network-to-Count-Gym-Reps)
